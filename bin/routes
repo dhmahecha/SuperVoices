@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.authenticate()
+GET	    /formadmin                  controllers.Application.formadmin()
+POST    /crearadmin                 controllers.Application.crearAdministrador()
+GET     /logout                    	controllers.Application.logout()
+GET 	/listarconcursos			controllers.Application.listarConcursos()
+GET	    /formconcurso               controllers.Application.formConcurso()
+POST    /crearconcurso              controllers.Application.crearConcurso()
+GET    	/adminconcursos             controllers.Application.adminConcursos()
+GET    	/detalleconcurso/:val_url   controllers.Application.detalleConcurso(val_url:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /user/:id		    		controllers.UserController.user(id:Long)
+GET     /administrador/:id		    controllers.AdministradorController.administrador(id:Long)
+GET     /concurso/:id		    	controllers.ConcursoController.concurso(id:Integer)
+
+GET     /locutorByEmail/:email		controllers.LocutorController.locutorByEmail(email:String)
+
+POST	/guardarlocutor				controllers.LocutorController.guardarLocutor()
+PUT    	/actualizarLocutor/:id		controllers.LocutorController.actualizarLocutor(id:Long)
+POST 	/guardarvoz					controllers.VozController.guardarVoz()

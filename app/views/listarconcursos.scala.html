@@ -1,0 +1,76 @@
+@(concursoFormData:Form[views.formdata.ConcursoFormData],concursos:List[Concurso])
+@import helper._
+
+
+@main("") {
+
+}
+<div class="panel panel-primary">
+	<div class="panel-heading"></div>
+		<div class="panel-body"></div>
+
+
+			<div class="container text-center">
+			  <p class="titulos">Tus Concursos</p>
+			  <h2>Aquí podras gestionar tus concursos!!</h2>
+			  <p>concurso(s): @concursos.size()</p>
+			    <br>
+			    
+	   			<div>
+
+ 					<div class="row">
+						<div class="col-sm-12">
+          					<div class="table-responsive">
+					           <table class="table table-bordered table-hover">
+					                 <thead>
+					                    <tr>
+					                        <th><strong>NOMBRE</strong></th>
+					                        <th><strong>FECHA INICIO</strong></th>
+					                        <th><strong>FECHA FIN</strong></th>
+					                        <th><strong>VALOR A PAGRA</strong></th>
+					                        <th><strong>URL</strong></th>
+					                        <th><strong>DETALLES DEL CONCURSO</strong></th>
+					                        <th><strong>VOCES INSCRITAS</strong></th>
+					                        <th><strong>OTRAS OPCIONES</strong></th>
+					                    </tr>
+					                  </thead>  
+						              <tbody>
+						             	@for(concurso <- concursos) {
+							             	<tr>
+						                        <th>@concurso.getNom_concurso()</th>
+						                        <th>@concurso.getFec_inicio()</th>
+						                        <th>@concurso.getFec_fin()</th>
+						                        <th>@concurso.getVal_pagar_voz()</th>
+						                        <th>@concurso.getVal_url()</th>
+						                        <th>
+						                          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="@concurso.getVal_url()">
+						                            <span class="glyphicon glyphicon-plus"></span> Detalles </button>
+						                          </button>
+						                        </th>
+						                        <th>
+						                          <a href="" style="font-size:14px;">
+						                              <span class="glyphicon glyphicon-music"></span>Listar voces
+						                            </a>
+						                        </th>
+						                        <th style="font-size:25px;">
+						                            <a href="" >
+						                              <span class="glyphicon glyphicon-pencil" ></span>
+						                            </a>
+						                           <a href="" >
+						                              <span class="glyphicon glyphicon-trash"></span>
+						                            </a>
+						                        </th>				                        			                        					             	
+							             	</tr>
+						             	}
+						             </tbody> 
+					             </table>            					
+          					</div>
+          				</div>	 					
+ 					</div> 			
+    			</div>
+
+			</div>
+
+		</div>
+	</div>	
+</div> 

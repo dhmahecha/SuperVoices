@@ -1,0 +1,35 @@
+{
+  "name": "supervoices",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Diego Mahecha"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/ISIS4426-Desarrollo-Soluciones-Cloud/Grupo01-S2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "bootstrap-social": "^5.0.0",
+    "bootstrap-rating-input": "^0.4.0",
+    "normalize-css": "^4.2.0",
+    "jquery2": "jquery#2.2.4",
+    "jquery-validation": "^1.15.1",
+    "jquery-ui": "^1.12.1",
+    "datetimepicker": "^2.3.7"
+  },
+  "resolutions": {
+    "font-awesome": "^4.6.3"
+  },
+  "dependencies": {
+    "simple-uuid": "^1.0.1"
+  }
+}

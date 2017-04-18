@@ -1,0 +1,33 @@
+{
+  "name": "SuperVoices",
+  "version": "1.0.0",
+  "description": "[ ![Codeship Status for ISIS4426-Desarrollo-Soluciones-Cloud/Grupo01-S2](https://codeship.com/projects/a4929710-8204-0134-53cf-2ebb60898159/status?branch=development)](https://codeship.com/projects/182369)",
+  "main": "index.js",
+  "engines": {
+    "node": "4.6.0"
+  },
+  "scripts": {
+    "postinstall": "bower install && grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISIS4426-Desarrollo-Soluciones-Cloud/Grupo01-S2.git"
+  },
+  "author": "Diego Mahecha",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ISIS4426-Desarrollo-Soluciones-Cloud/Grupo01-S2/issues"
+  },
+  "homepage": "https://github.com/ISIS4426-Desarrollo-Soluciones-Cloud/Grupo01-S2#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "bower-requirejs": "^1.2.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "js-uuid": "0.0.6",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "devDependencies": {}
+}
