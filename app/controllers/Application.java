@@ -5,6 +5,8 @@ import play.mvc.Http;
 import play.mvc.Result;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,11 +31,13 @@ import constantes.IConstantesSuperVoices;
 import models.Administrador;
 import models.Concurso;
 import models.User;
+import net.spy.memcached.MemcachedClient;
 import play.data.validation.ValidationError;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Security;
 import utils.GestionAWS;
+import utils.ClienteMemCache;
 import views.formdata.ConcursoFormData;
 import views.formdata.CreateAdminFormData;
 import views.formdata.DetalleConcursoFormData;
@@ -48,6 +52,8 @@ import views.html.helper.form;
 import play.data.FormFactory;
 import play.filters.csrf.RequireCSRFCheck; 
 import play.Configuration;
+import play.Play;
+import play.Logger;
 
 
 public class Application extends Controller{
@@ -57,6 +63,8 @@ public class Application extends Controller{
 	 * Provee el formulario de autenticación
 	 * @return
 	 */
+
+	
 	public Result login() {
 		Form<LoginFormData> userForm = formFactory.form(LoginFormData.class);
 		return ok(login.render(userForm));
@@ -92,6 +100,23 @@ public class Application extends Controller{
 			session("username", userForm.get().getUsername());
 			session("user_id", user_id.toString());
 			session("admin_id",admin_id.toString());
+						
+			try
+            {
+				Logger.info("ElastiCache ");
+				
+				MemcachedClient client = new MemcachedClient(new InetSocketAddress(Play.application().configuration().getString("memcache.host"), 
+										Play.application().configuration().getInt("clusterPort")));
+				client.set("Autenticado", 3600, user_id).get();
+				
+				Logger.info("Listo el Cache");
+				Object cache = client.get("Autenticado");
+				Logger.info("Valor Cache" + cache.toString());
+				
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+            }
 			return redirect(routes.HomeController.index());
 		}
 	}
@@ -99,6 +124,7 @@ public class Application extends Controller{
 
 	@Security.Authenticated(Secured.class)
 	public Result adminConcursos(){
+		
 		return ok(adminconcursos.render());
 	}
 
@@ -115,6 +141,23 @@ public class Application extends Controller{
 			session("username", createAdminForm.get().getUsername());
 			session("user_id", user_id.toString());
 			session("admin_id",admin_id.toString());
+			
+			try
+            {
+				Logger.info("ElastiCache ");
+				
+				MemcachedClient client = new MemcachedClient(new InetSocketAddress(Play.application().configuration().getString("memcache.host"), 
+						Play.application().configuration().getInt("clusterPort")));
+				client.set("Autenticado", 3600, user_id).get();
+				
+				Logger.info("Listo el Cache");
+				Object cache = client.get("Autenticado");
+				Logger.info("Valor Cache" + cache.toString());
+				
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+            }
 			return redirect(routes.HomeController.index());
 		}
 

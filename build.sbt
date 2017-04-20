@@ -20,3 +20,5 @@ libraryDependencies += "com.google.code.maven-play-plugin.org.playframework.modu
 libraryDependencies += filters
 libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m"
 libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.3.11"
+libraryDependencies += "com.typesafe.play.modules" %% "play-modules-redis" % "2.5.0"
+libraryDependencies += "net.spy" % "spymemcached" % "2.12.1"
