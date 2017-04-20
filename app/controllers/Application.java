@@ -274,5 +274,11 @@ public class Application extends Controller{
 		Form<DetalleConcursoFormData> detalleConcursoForm = formFactory.form(DetalleConcursoFormData.class);
 		DetalleConcursoFormData detalleConcurso = new DetalleConcursoFormData(val_url);
 		return ok(detalleconcurso.render(detalleConcursoForm,detalleConcurso.getConcurso(), detalleConcurso.getListaVoces()));
-	}	
+	}
+
+	@Security.Authenticated(Secured.class)	
+	public Result eliminarConcurso(Long id){
+		Concurso.eliminarConcurso(id);
+		return redirect(routes.Application.listarConcursos());
+	}
 }

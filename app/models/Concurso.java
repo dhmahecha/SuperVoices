@@ -13,6 +13,7 @@ import org.jongo.MongoCursor;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import constantes.IConstantesSuperVoices;
+import enums.Estado;
 import play.Play;
 import uk.co.panaxiom.playjongo.PlayJongo;
 
@@ -36,6 +37,7 @@ public class Concurso {
 	private String txt_recomendaciones;
 	private Long administrador_id;
 	private ArrayList<Integer> voz_id;
+	private String ind_estado;
 
 	
 	public Concurso(){
@@ -72,7 +74,7 @@ public class Concurso {
 	}
 	
 	public static MongoCursor<Concurso> findConcursoByAdmin_id(Long administrador_id){
-		return concursos().find("{administrador_id: " + administrador_id + "}").as(Concurso.class);
+		return concursos().find("{administrador_id:#, ind_estado:#}",  administrador_id, "A" ).as(Concurso.class);
 	}
 	
 	
@@ -88,9 +90,14 @@ public class Concurso {
 	public Concurso insert() {
 		this.id = Sequences.getNextSequenceValue(IConstantesSuperVoices.SECUENCIA_CONCURSO);
 		this.administrador_id = new Long(play.mvc.Http.Context.current().session().get("admin_id").toString());
+		this.ind_estado = "A";
 		concursos().save(this);
         return this;
     }
+	
+	public static void eliminarConcurso(Long id) {
+    	concursos().update("{id:"+ id +"}").with("{$set: {ind_estado: #}}", "I");
+	}
 
 	public Long getId() {
 		return id;
@@ -210,7 +217,13 @@ public class Concurso {
 		this.txt_recomendaciones = txt_recomendaciones;
 	}
 
+	public String getInd_estado() {
+		return ind_estado;
+	}
 
+	public void setInd_estado(String ind_estado) {
+		this.ind_estado = ind_estado;
+	}
 
 	public Collection<Voz> getVoz() {
 		Collection<Voz> voz = new ArrayList<Voz>(); 
