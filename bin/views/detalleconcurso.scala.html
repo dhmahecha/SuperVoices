@@ -68,19 +68,16 @@
               </table>
 
                 <ul class="pagination">
-                {% if voces.has_previous %}
                     <li>
-                        <span><a href="?page={{ voces.previous_page_number }}">Previous</a></span>
+                        <span><a href="">Previous</a></span>
                     </li>
-                {% endif %}
+
                     <li class="">
-                        <span>Page {{ voces.number }} of {{ voces.paginator.num_pages }}.</span>
+                        <span>Page 1 of 1.</span>
                     </li>
-                {% if voces.has_next %}
                     <li>
-                        <span><a href="?page={{ voces.next_page_number }}">Next</a></span>
+                        <span><a href="">Next</a></span>
                     </li>
-                {% endif %}
                 </ul>
             </div>
         </div>

@@ -13,6 +13,7 @@ import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 import utils.GestionAWS;
+import utils.GestionAWS.SQS;
 
 public class VozController extends Controller {
 	public Result user(Integer id){
@@ -45,6 +46,10 @@ public class VozController extends Controller {
 		Voz voz = new Voz(rutPublica,formData.get("txt_observaciones"),new Long(formData.get("locutor")),
 				new Long(formData.get("concurso")),formData.get("idVoz"));
 		voz = voz.insert();
+		
+		GestionAWS.SQS sqs = new GestionAWS.SQS();
+		sqs.createMessage(voz.getIdVoz());
+		
 		return ok(Json.toJson(voz));
  	}	
 }

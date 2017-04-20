@@ -19,4 +19,5 @@ libraryDependencies += "org.mongodb" % "mongo-java-driver" % "3.2.2"
 libraryDependencies += "com.google.code.maven-play-plugin.org.playframework.modules.secure" % "play-secure" % "1.3.1"
 libraryDependencies += filters
 libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m"
-libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.3.11"
+libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.120"
+libraryDependencies += "javax.mail" % "mail" % "1.4.5"
