@@ -7,6 +7,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.8"
 
+herokuAppName in Compile := "voicessuper"
+
 libraryDependencies += filters
 
 EclipseKeys.projectFlavor := EclipseProjectFlavor.Java           // Java project. Don't expect Scala IDE
@@ -23,4 +25,6 @@ libraryDependencies += "com.typesafe.play.modules" %% "play-modules-redis" % "2.
 libraryDependencies += "net.spy" % "spymemcached" % "2.12.1"
 libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.120"
 libraryDependencies += "javax.mail" % "mail" % "1.4.5"
+
+herokuAppName in Compile := "voicessuper"
 
