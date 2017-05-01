@@ -1,18 +1,18 @@
-
 import java.util.concurrent.TimeUnit;
-
 import akka.actor.Cancellable;
 import constantes.IConstantesSuperVoices;
 import play.Application;
 import play.Configuration;
 import play.GlobalSettings;
 import play.Logger;
+import play.Play;
 import play.libs.Akka;
 import scala.concurrent.duration.Duration;
 import utils.ProcesarAudio;
 
 
 
+@SuppressWarnings("deprecation")
 public class Global extends GlobalSettings {
 
 	private Cancellable scheduler;

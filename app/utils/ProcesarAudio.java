@@ -72,13 +72,8 @@ public class ProcesarAudio {
 		}
 		
 		Voz.actualizarVoz(voz.getId(), IConstantesSuperVoices.RUTA_CLOUDFRONT_AUDIOS_CONVERTIDOS + nomArchivoConvertido);
-		Correo correo = new Correo();
-		try {
-			correo.enviarCorreo(voz.getLocutor().getEmail(), voz.getLocutor().getNombres());
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		}
-
+		CorreoSendGrid correo = new CorreoSendGrid();
+		correo.sendEmail(voz.getLocutor().getEmail(), voz.getLocutor().getNombres());
 	}
 	
 	/**

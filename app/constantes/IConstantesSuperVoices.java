@@ -18,6 +18,10 @@ public class IConstantesSuperVoices {
     public static final String EMAIL_HOST_USER = "supervoices.email.host.user";
     public static final String EMAIL_HOST_PASSWORD = "supervoices.email.host.password";
     public static final String EMAIL_HOST_NAME = "supervoices.email.host.name";
+    public static final String SENDGRID_API_KEY = "supervoices.sendgrid";
+    public static final String MEMCACHE_USER = "supervoices.memcache.user";
+    public static final String MEMCACHE_PASSWORD = "supervoices.memcache.password";
+    public static final String MEMCACHE_ADDRESS = "supervoices.memcache.address";
     
     
     public static final String CARPETA_IMAGENES = "images/";

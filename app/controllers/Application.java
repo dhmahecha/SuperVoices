@@ -5,11 +5,9 @@ import play.mvc.Http;
 import play.mvc.Result;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,26 +16,21 @@ import java.util.Map.Entry;
 
 import javax.inject.Inject;
 
-import org.mindrot.jbcrypt.BCrypt;
-
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.PutObjectResult;
 
 import constantes.IConstantesSuperVoices;
 import models.Administrador;
 import models.Concurso;
 import models.User;
+import net.spy.memcached.AddrUtil;
+import net.spy.memcached.ConnectionFactory;
+import net.spy.memcached.ConnectionFactoryBuilder;
 import net.spy.memcached.MemcachedClient;
+import net.spy.memcached.auth.AuthDescriptor;
+import net.spy.memcached.auth.PlainCallbackHandler;
 import play.data.validation.ValidationError;
-import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Security;
 import utils.GestionAWS;
-import utils.ClienteMemCache;
 import views.formdata.ConcursoFormData;
 import views.formdata.CreateAdminFormData;
 import views.formdata.DetalleConcursoFormData;
@@ -48,9 +41,7 @@ import views.html.listarconcursos;
 import views.html.crearconcurso;
 import views.html.adminconcursos;
 import views.html.detalleconcurso;
-import views.html.helper.form;
-import play.data.FormFactory;
-import play.filters.csrf.RequireCSRFCheck; 
+import play.data.FormFactory; 
 import play.Configuration;
 import play.Play;
 import play.Logger;
@@ -92,8 +83,6 @@ public class Application extends Controller{
 		if (userForm.hasErrors()) {
 			return badRequest(login.render(userForm));
 		} else {
-			//GestionAWS gestionAWS = new GestionAWS();
-			//gestionAWS.sesionElastiCache();
 			Long user_id = User.findByUserName(userForm.get().getUsername()).getId();
 			Long admin_id = Administrador.findAdministradorByUser_id(user_id).getId();
 			session().clear();
@@ -103,16 +92,31 @@ public class Application extends Controller{
 						
 			try
             {
-				Logger.info("ElastiCache ");
+				Logger.info("Se agregan datos a cache");
+			    AuthDescriptor ad = new AuthDescriptor(new String[] { "PLAIN" },
+			            new PlainCallbackHandler(Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_USER), 
+			            		Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_PASSWORD)));
+			    ConnectionFactory connFactory = new ConnectionFactoryBuilder()
+			            .setProtocol(ConnectionFactoryBuilder.Protocol.BINARY)
+			            .setAuthWaitTime(10000)
+			            .setOpTimeout(10000)
+			            .setShouldOptimize(true)
+			            .setAuthDescriptor(ad).build();		
+
+			    List<InetSocketAddress> servers = AddrUtil.getAddresses(
+			    		Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_ADDRESS));
+				MemcachedClient client = new MemcachedClient(connFactory, servers);
+
+				client.set("username", 3600, userForm.get().getUsername()).get();
+				client.set("user_id", 3600, user_id.toString()).get();
+				client.set("admin_id", 3600, admin_id.toString()).get();
 				
-				MemcachedClient client = new MemcachedClient(new InetSocketAddress(Play.application().configuration().getString("memcache.host"), 
-										Play.application().configuration().getInt("clusterPort")));
-				client.set("Autenticado", 3600, user_id).get();
-				
-				Logger.info("Listo el Cache");
-				Object cache = client.get("Autenticado");
-				Logger.info("Valor Cache" + cache.toString());
-				
+				Object cacheUsername = client.get("username");
+				Object cacheUserId = client.get("user_id");
+				Object cacheUserAdminId = client.get("admin_id");
+				Logger.info("Cache Username: " + cacheUsername);
+				Logger.info("Cache UserId: " + cacheUserId);
+				Logger.info("Cache cacheUserAdminId: " + cacheUserAdminId);
             }catch(Exception e)
             {
                 e.printStackTrace();
@@ -140,20 +144,34 @@ public class Application extends Controller{
 			session().clear();
 			session("username", createAdminForm.get().getUsername());
 			session("user_id", user_id.toString());
-			session("admin_id",admin_id.toString());
-			
+			session("admin_id",admin_id.toString());			
 			try
             {
-				Logger.info("ElastiCache ");
+				Logger.info("Se agregan datos a cache");
+			    AuthDescriptor ad = new AuthDescriptor(new String[] { "PLAIN" },
+			            new PlainCallbackHandler(Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_USER), 
+			            		Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_PASSWORD)));
+			    ConnectionFactory connFactory = new ConnectionFactoryBuilder()
+			            .setProtocol(ConnectionFactoryBuilder.Protocol.BINARY)
+			            .setAuthWaitTime(10000)
+			            .setOpTimeout(10000)
+			            .setShouldOptimize(true)
+			            .setAuthDescriptor(ad).build();		
+
+			    List<InetSocketAddress> servers = AddrUtil.getAddresses(
+			    		Configuration.root().getString(IConstantesSuperVoices.MEMCACHE_ADDRESS));
+				MemcachedClient client = new MemcachedClient(connFactory, servers);
+
+				client.set("username", 3600, createAdminForm.get().getUsername()).get();
+				client.set("user_id", 3600, user_id.toString()).get();
+				client.set("admin_id", 3600, admin_id.toString()).get();
 				
-				MemcachedClient client = new MemcachedClient(new InetSocketAddress(Play.application().configuration().getString("memcache.host"), 
-						Play.application().configuration().getInt("clusterPort")));
-				client.set("Autenticado", 3600, user_id).get();
-				
-				Logger.info("Listo el Cache");
-				Object cache = client.get("Autenticado");
-				Logger.info("Valor Cache" + cache.toString());
-				
+				Object cacheUsername = client.get("username");
+				Object cacheUserId = client.get("user_id");
+				Object cacheUserAdminId = client.get("admin_id");
+				Logger.info("Cache Username: " + cacheUsername);
+				Logger.info("Cache UserId: " + cacheUserId);
+				Logger.info("Cache cacheUserAdminId: " + cacheUserAdminId);
             }catch(Exception e)
             {
                 e.printStackTrace();

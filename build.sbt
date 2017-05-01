@@ -25,6 +25,8 @@ libraryDependencies += "com.typesafe.play.modules" %% "play-modules-redis" % "2.
 libraryDependencies += "net.spy" % "spymemcached" % "2.12.1"
 libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.120"
 libraryDependencies += "javax.mail" % "mail" % "1.4.5"
+libraryDependencies += "com.sendgrid" % "sendgrid-java" % "2.2.1"
+libraryDependencies += "com.newrelic.agent.java" % "newrelic-agent" % "3.1.1"
 
 herokuAppName in Compile := "voicessuper"
 
