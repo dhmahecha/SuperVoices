@@ -18,6 +18,7 @@ public class Global extends GlobalSettings {
 	private Cancellable scheduler;
 
 	public void onStart(Application application) {
+		Logger.info("Se esta corriendo sobre un servidor: " + System.getProperty("processtype"));
 		if(Configuration.root().getString(IConstantesSuperVoices.ES_WORKER).equals("true")){
 			int timeDelayFromAppStartToLogFirstLogInMs = 0;
 			int timeGapBetweenMemoryLogsInMinutes = 30;
