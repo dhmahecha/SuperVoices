@@ -19,7 +19,8 @@ public class Global extends GlobalSettings {
 
 	public void onStart(Application application) {
 		Logger.info("Se esta corriendo sobre un servidor: " + System.getProperty("processtype"));
-		if(Configuration.root().getString(IConstantesSuperVoices.ES_WORKER).equals("true")){
+		//if(Configuration.root().getString(IConstantesSuperVoices.ES_WORKER).equals("true")){
+		if(System.getProperty("processtype").equals("worker")){
 			int timeDelayFromAppStartToLogFirstLogInMs = 0;
 			int timeGapBetweenMemoryLogsInMinutes = 30;
 			scheduler = Akka.system().scheduler().schedule(Duration.create(timeDelayFromAppStartToLogFirstLogInMs, TimeUnit.MILLISECONDS),
