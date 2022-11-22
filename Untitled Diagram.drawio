@@ -1,1 +1,189 @@
-<mxfile host="app.diagrams.net" modified="2022-11-22T02:00:54.953Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" version="20.5.3" etag="UCbMQDoZJ2YMli-n90L7" type="github"><diagram id="EjnFxZVK7dkK2MVKqiI9">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-22T13:13:32.281Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="fMWqvyMKMLdGhGllbBKZ" version="20.5.3" type="github">
+  <diagram id="EjnFxZVK7dkK2MVKqiI9" name="Page-1">
+    <mxGraphModel dx="2512" dy="1862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-1" value="&amp;lt;&amp;lt;device&amp;gt;&amp;gt;&lt;br&gt;Front Door and CDN profiles&lt;br&gt;front-azurednp-prod" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="-275" y="-860" width="240" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-2" value="&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;&lt;br&gt;&lt;span style=&quot;color: rgb(50, 49, 48); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;bibliotecadigital.dnp.gov.co&lt;/span&gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-1">
+          <mxGeometry width="210" height="70" relative="1" as="geometry">
+            <mxPoint x="10" y="70" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-4" value="&amp;lt;&amp;lt;routes&amp;gt;&amp;gt;&lt;br&gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-1">
+          <mxGeometry x="10" y="160" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-5" value="&lt;b&gt;apiroute&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-1">
+          <mxGeometry x="25" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-6" value="&lt;b&gt;bibliotecadigitalroute&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-1">
+          <mxGeometry x="25" y="240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-8" value="&amp;lt;&amp;lt;API Management service&amp;gt;&amp;gt;&lt;br&gt;api-dnp-azure-prod-001" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="155" y="-1080" width="260" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-9" value="&amp;lt;&amp;lt;api&amp;gt;&amp;gt;&lt;br&gt;api-bibliotecadigital-prod" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry width="230" height="300" relative="1" as="geometry">
+            <mxPoint x="10" y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-12" value="&lt;b&gt;(POST) blocks&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="106.73" width="180" height="33.27" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-13" value="&lt;b&gt;(GET) documents&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="140" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-14" value="&lt;b&gt;(GET) parametrics&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="170" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-15" value="&lt;b&gt;(POST) post_documents&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-16" value="&lt;b&gt;(GET) sources&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="230" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-17" value="&lt;b&gt;(PUT) sources_by_id&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="260" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-18" value="&lt;b&gt;(POST) upload&lt;/b&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry x="30" y="290" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-19" value="&amp;lt;&amp;lt;App Service&amp;gt;&amp;gt;&lt;br&gt;app-bibliotecadigital-prod" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="165" y="-600" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-20" value="&amp;lt;&amp;lt;Angular&amp;gt;&amp;gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-19">
+          <mxGeometry width="220" height="110" relative="1" as="geometry">
+            <mxPoint x="15" y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-23" value="WebBibliotecaDigital1.0" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-19">
+          <mxGeometry x="35" y="100" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-21" value="" style="endArrow=none;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=195;entryDy=260;entryPerimeter=0;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-5" target="smKGTAbe-oTAFLsR2ICT-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5" y="-530" as="sourcePoint" />
+            <mxPoint x="165" y="-530" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="95" y="-645" />
+              <mxPoint x="95" y="-885" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-22" value="https:443" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="25" y="-670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-25" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=105;entryDy=260;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-6" target="smKGTAbe-oTAFLsR2ICT-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="55" y="-540" as="sourcePoint" />
+            <mxPoint x="105" y="-590" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="95" y="-605" />
+              <mxPoint x="95" y="-495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-26" value="https:443" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="25" y="-630" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-27" value="&amp;lt;&amp;lt;Api App&amp;gt;&amp;gt;&lt;br&gt;api-bibliotecadigital-prod" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="-995" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-28" value="&amp;lt;&amp;lt;.NET Core&amp;gt;&amp;gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-27">
+          <mxGeometry width="220" height="110" relative="1" as="geometry">
+            <mxPoint x="15" y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-29" value="ApiBibliotecaDigital1.0" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-27">
+          <mxGeometry x="30" y="110" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-30" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=105;entryDy=260;entryPerimeter=0;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-8" target="smKGTAbe-oTAFLsR2ICT-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="-850" as="sourcePoint" />
+            <mxPoint x="500" y="-900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-31" value="https:443" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="-912" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-32" value="&amp;lt;&amp;lt;Key Vault&amp;gt;&amp;gt;&lt;br&gt;&lt;span style=&quot;color: rgb(50, 49, 48); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;kv-bibliotecadigital&lt;/span&gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="-285" y="-1080" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-33" value="&amp;lt;&amp;lt;secrets&amp;gt;&amp;gt;" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-32">
+          <mxGeometry width="220" height="100" relative="1" as="geometry">
+            <mxPoint x="13" y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-37" value="&amp;lt;&amp;lt;certificate&amp;gt;&amp;gt;&lt;br&gt;kv-bibliotecadigital-DNP2022-latest" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-32">
+          <mxGeometry x="20" y="92" width="194.71" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-38" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=30;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-37" target="smKGTAbe-oTAFLsR2ICT-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-10" y="-960" as="sourcePoint" />
+            <mxPoint x="40" y="-1010" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="30" y="-970" />
+              <mxPoint x="30" y="-760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-39" value="&amp;lt;&amp;lt;SQL Server&amp;gt;&amp;gt;&lt;br&gt;srvbibliotecadigital" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="890" y="-975" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-40" value="SQL Database&lt;br&gt;biblioteca_digital" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-39">
+          <mxGeometry width="190" height="80" relative="1" as="geometry">
+            <mxPoint x="20" y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-41" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=95;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=75;entryDy=240;entryPerimeter=0;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-27" target="smKGTAbe-oTAFLsR2ICT-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="-840" as="sourcePoint" />
+            <mxPoint x="870" y="-890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-42" value="&amp;lt;&amp;lt;Search service&amp;gt;&amp;gt;&lt;br&gt;biblioteca-digital-cognserv" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="-790" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-45" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=200;entryDy=135;entryPerimeter=0;exitX=0;exitY=0;exitDx=40;exitDy=190;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-42" target="smKGTAbe-oTAFLsR2ICT-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="-710" as="sourcePoint" />
+            <mxPoint x="690" y="-760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-46" value="&amp;lt;&amp;lt;Storage account&amp;gt;&amp;gt;&lt;br&gt;bibliotecadigitalcnt" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="910" y="-657" width="190" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-47" value="containers" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-46">
+          <mxGeometry width="160" height="100" relative="1" as="geometry">
+            <mxPoint x="10" y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-48" value="&lt;span style=&quot;color: rgb(50, 49, 48); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;funcionpublica&lt;/span&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-46">
+          <mxGeometry x="16" y="83" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-49" value="&lt;span style=&quot;color: rgb(50, 49, 48); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;bibdig-proyeccion-fp&lt;/span&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-46">
+          <mxGeometry x="16" y="103" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-51" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 13px;&quot;&gt;&lt;font face=&quot;az_ea_font, Segoe UI, az_font, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif&quot; color=&quot;#323130&quot;&gt;salidabibdig&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="html=1;align=center;verticalAlign=middle;dashed=0;" vertex="1" parent="smKGTAbe-oTAFLsR2ICT-46">
+          <mxGeometry x="16" y="123" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-52" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=70;entryDy=100;entryPerimeter=0;exitX=0;exitY=0;exitDx=0;exitDy=90;exitPerimeter=0;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-46" target="smKGTAbe-oTAFLsR2ICT-42">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="-630" as="sourcePoint" />
+            <mxPoint x="1050" y="-680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-53" value="&amp;lt;&amp;lt;Azure Databricks Service&amp;gt;&amp;gt;&lt;br&gt;dbricksworkspacebibdid" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="590" y="-601" width="190" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="smKGTAbe-oTAFLsR2ICT-55" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=85;entryDy=190;entryPerimeter=0;exitX=0;exitY=0;exitDx=28.5;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="smKGTAbe-oTAFLsR2ICT-53" target="smKGTAbe-oTAFLsR2ICT-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="-670" as="sourcePoint" />
+            <mxPoint x="460" y="-720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
